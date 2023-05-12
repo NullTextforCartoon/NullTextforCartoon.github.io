@@ -69,7 +69,7 @@
                 </a>
       </span>
       <span class="link-block" style="font-style: inherit;font-weight: inherit;background-color: #dee2e6; padding: 10px 30px; border-radius: 25px;text-align: center;">
-                <a href="https://github.com/MagicFusion/MagicFusion.github.io" target="_blank"
+                <a href="https://github.com/NullTextforCartoon/NullTextforCartoon" target="_blank"
                 class="external-link button is-normal is-rounded">
                 <span class="icon">
                   <i class="fab fa-github"></i>
@@ -78,36 +78,18 @@
               </a>
               </span>
     </div>
-   
-
-    <!-- <div class="topgallery">
-      <div class="input-output">
-        <img src="./static/srn_shapenet/cars_6_cond.png">
-        <span>&#8594</span>
-        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/cars_6_hyp.mp4"></video>
-      </div>
-      <div class="input-output">
-        <img src="./static/srn_shapenet/chairs_17_cond.png">
-        <span>&#8594</span>
-        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/chairs_17_hyp.mp4"></video>
-      </div>
-      <div class="input-output">
-        <img src="./static/srn_shapenet/cars_42_cond.png">
-        <span>&#8594</span>
-        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/cars_42_hyp.mp4"></video>
-      </div>
-      <div class="input-output">
-        <img src="./static/srn_shapenet/chairs_121_cond.png">
-        <span>&#8594</span>
-        <video autoplay loop muted><source type="video/mp4" src="./static/srn_shapenet/chairs_121_hyp.mp4"></video>
-      </div>
-    </div> -->
+  
 
     <div class="abstract">
       <div class="inside">
         <h3 style="text-align: center;">Abstract</h2>
         <p class="text">
-The advent of open-source AI communities has produced a cornucopia of powerful text-guided diffusion models that are trained on various datasets. While few explorations have been conducted on ensembling such models to combine their strengths. In this work, we propose a simple yet effective method called Saliency-aware Noise Blending (SNB) that can empower the fused text-guided diffusion models to achieve more controllable generation. Specifically, we experimentally find that the responses of classifier-free guidance are highly related to the saliency of generated images. Thus we propose to trust different models in their areas of expertise by blending the predicted noises of two diffusion models in a saliency-aware manner. SNB is training-free and can be completed within a DDIM sampling process. Additionally, it can automatically align the semantics of two noise spaces without requiring additional annotations such as masks. Extensive experiments show  the impressive effectiveness of SNB in various applications.
+Classifier-free guidance is an effective sampling technique in diffusion models that has been widely adopted. The main idea is to extrapolate the model in the direction of text guidance and away from null-text guidance. In this paper, we demonstrate that null-text guidance in diffusion models is secretly a cartoon-style creator, i.e., the generated images can be efficiently transformed into cartoons by simply perturbing the null-text guidance. 
+Specifically, we proposed two disturbance methods, i.e., Rollback disturbance (Back-D) and Image disturbance (Image-D), to construct misalignment between the noisy images used for predicting null-text guidance and text guidance (subsequently referred to as \textbf{null-text noisy image} and \textbf{text noisy image} respectively) in the sampling process. 
+Back-D achieves cartoonization by altering the noise level of null-text noisy image via replacing $x_t$ with $x_{t+\Delta t}$.
+Image-D, alternatively, produces high-fidelity, diverse cartoons by defining $x_t$ as a clean input image, which further improves the incorporation of finer image details.
+Through comprehensive experiments, we delved into the principle of noise disturbing for null-text and uncovered that the efficacy of disturbance depends on the correlation between the null-text noisy image and the source image. Moreover, our proposed techniques, which can generate cartoon images and cartoonize specific ones, are training-free and easily integrated as a plug-and-play component in any classifier-free guided diffusion model.
+Project page is available at \url{https://nulltextforcartoon.github.io/}.
         </p>
 <!--         <br>
         <br> 
